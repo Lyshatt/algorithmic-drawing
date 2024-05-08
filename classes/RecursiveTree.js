@@ -14,6 +14,9 @@ class RecursiveTree {
             if(this.isBeautyMode) {
                 canvasContext.lineWidth = iterationCount !== 1 ? iterationCount * 2 : 10;
                 canvasContext.strokeStyle = iterationCount !== 1 ? '#614126' : '#2d800f';
+            } else {
+                canvasContext.lineWidth = 1;
+                canvasContext.strokeStyle = '#000000';
             }
 
             let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
