@@ -1,28 +1,29 @@
 // Declaration
 class RecursiveTree {
-    constructor(lengthOfLines, angleDelta, canvasContext) {
-        this.lengthOfLines = lengthOfLines;
+    constructor(angleDelta, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, canvasContext) {
         this.angleDelta = angleDelta;
-        this.ctx = canvasContext;
+        this.canvasContext = canvasContext;
+        this.lineLengthChangeFactor = lineLengthChangeFactor;
+        this.leftBranchDelay = leftBranchDelay;
+        this.rightBranchDelay = rightBranchDelay;
     }
-    draw(iterationCount, currentXPosition, currentYPosition, angle) {
+    draw(iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
         if(iterationCount > 0) {
-            let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, this.lengthOfLines);
-            this.ctx.beginPath();
-            this.ctx.moveTo(currentXPosition, currentYPosition);
-            this.ctx.lineTo(nextXPosition, nextYPosition);
-            this.ctx.stroke();
+            let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
+            this.canvasContext.beginPath();
+            this.canvasContext.moveTo(currentXPosition, currentYPosition);
+            this.canvasContext.lineTo(nextXPosition, nextYPosition);
+            this.canvasContext.stroke();
 
             const that = this;
 
             setTimeout(function ()  {
-                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle + that.angleDelta);
-            }, 250);
+                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle + that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
+            }, this.leftBranchDelay);
 
             setTimeout(function ()  {
-                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle - that.angleDelta);
-            }, 2000);
-
+                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle - that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
+            }, this.rightBranchDelay);
         }
     }
 

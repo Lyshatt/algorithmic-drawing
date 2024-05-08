@@ -10,6 +10,9 @@ const lineLengthInput = document.getElementById('line-length');
 const offsetAngleInput = document.getElementById('offset-angle');
 const startAngleInput = document.getElementById('start-angle');
 const lineLengthChangeFactorInput = document.getElementById('line-length-change-factor');
+const leftBranchDelayInput = document.getElementById('left-branch-delay');
+const rightBranchDelayInput = document.getElementById('right-branch-delay');
+
 const startButton = document.getElementById('start-button')
 
 widthInput.addEventListener('input', function () {
@@ -30,9 +33,12 @@ startButton.addEventListener("click", function () {
     const lineLength = parseInt(lineLengthInput.value);
     const offsetAngle = parseInt(offsetAngleInput.value);
     const startAngle = parseInt(startAngleInput.value);
+    const lineLengthChangeFactor = parseFloat(lineLengthChangeFactorInput.value);
+    const leftBranchDelay = parseFloat(leftBranchDelayInput.value);
+    const rightBranchDelay = parseFloat(rightBranchDelayInput.value);
 
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(lineLength, offsetAngle, canvasContext);
-    tree.draw(recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle);
+    const tree = new RecursiveTree(offsetAngle, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, canvasContext);
+    tree.draw(recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
