@@ -16,6 +16,7 @@ class RecursiveTree {
             this.canvasContext.lineTo(nextXPosition, nextYPosition);
             this.canvasContext.stroke();
 
+            // this is a workaround to get data into the scope of the setTimeout function
             const that = this;
 
             setTimeout(function () {
