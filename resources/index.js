@@ -10,8 +10,9 @@ const lineLengthInput = document.getElementById('line-length');
 const offsetAngleInput = document.getElementById('offset-angle');
 const startAngleInput = document.getElementById('start-angle');
 const lineLengthChangeFactorInput = document.getElementById('line-length-change-factor');
-const leftBranchDelayInput = document.getElementById('left-branch-delay');
-const rightBranchDelayInput = document.getElementById('right-branch-delay');
+const angleChangeFactorInput = document.getElementById('angle-change-factor');
+const delayInput = document.getElementById('delay');
+const divisionsInput = document.getElementById('divisions');
 const beautyModeInput = document.getElementById('beauty-mode');
 
 const startButton = document.getElementById('start-button')
@@ -35,13 +36,14 @@ startButton.addEventListener("click", function () {
     const offsetAngle = parseInt(offsetAngleInput.value);
     const startAngle = parseInt(startAngleInput.value);
     const lineLengthChangeFactor = parseFloat(lineLengthChangeFactorInput.value);
-    const leftBranchDelay = parseFloat(leftBranchDelayInput.value);
-    const rightBranchDelay = parseFloat(rightBranchDelayInput.value);
+    const angleChangeFactor = parseFloat(angleChangeFactorInput.value);
+    const delay = parseInt(delayInput.value);
+    const divisions = parseInt(divisionsInput.value);
     const isBeautyMode = beautyModeInput.checked;
 
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(offsetAngle, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, isBeautyMode, canvasContext);
-    tree.draw(recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
+    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, isBeautyMode, canvasContext);
+    tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })

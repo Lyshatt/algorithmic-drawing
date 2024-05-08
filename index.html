@@ -15,7 +15,7 @@
                     <label for="canvas-width">Canvas Width</label>
                 </div>
                 <div>
-                    <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="500"/>
+                    <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="600"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -31,7 +31,7 @@
                     <label for="recursion-depth">Depth Of Recursion</label>
                 </div>
                 <div>
-                    <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="10"/>
+                    <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="7"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -39,7 +39,7 @@
                     <label for="start-x">Start-Coordinate X</label>
                 </div>
                 <div>
-                    <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="250"/>
+                    <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="300"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -55,7 +55,7 @@
                     <label for="line-length">Line Length</label>
                 </div>
                 <div>
-                    <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="60"/>
+                    <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="80"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -63,7 +63,7 @@
                     <label for="offset-angle">Offset Angle</label>
                 </div>
                 <div>
-                    <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="15"/>
+                    <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="25"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -77,6 +77,15 @@
             </div>
             <div class="mb-2">
                 <div>
+                    <label for="angle-change-factor">Angle Change Factor</label>
+                </div>
+                <div>
+                    <input id="angle-change-factor" name="angle-change-factor" class="px-2 py-1 shadow-md"
+                           value="0.8"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
                     <label for="start-angle">Start Angle</label>
                 </div>
                 <div>
@@ -85,18 +94,18 @@
             </div>
             <div class="mb-2">
                 <div>
-                    <label for="left-branch-delay">Left Branch Delay In MS</label>
+                    <label for="delay">Delay In MS</label>
                 </div>
                 <div>
-                    <input id="left-branch-delay" name="left-branch-delay" class="px-2 py-1 shadow-md" value="100"/>
+                    <input id="delay" name="delay" class="px-2 py-1 shadow-md" value="100"/>
                 </div>
             </div>
             <div class="mb-2">
                 <div>
-                    <label for="right-branch-delay">Right Branch Delay in MS</label>
+                    <label for="divisions">Numbers Of Branches Per Node</label>
                 </div>
                 <div>
-                    <input id="right-branch-delay" name="right-branch-delay" class="px-2 py-1 shadow-md" value="200"/>
+                    <input id="divisions" name="divisions" class="px-2 py-1 shadow-md" value="3"/>
                 </div>
             </div>
             <div class="mb-2">
@@ -114,8 +123,8 @@
         </div>
     </div>
     <div class="flex flex-1 justify-center items-center bg-white shadow-md">
-        <canvas style="width: 500px; height: 500px;" class="m-2 border-4 bg-gray-200 rounded-sm border-gray-500"
-                id="canvas" width="500" height="500"></canvas>
+        <canvas style="width: 600px; height: 500px;" class="m-2 border-4 bg-gray-200 rounded-sm border-gray-500"
+                id="canvas" width="600" height="500"></canvas>
     </div>
 </div>
 

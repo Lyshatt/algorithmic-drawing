@@ -1,38 +1,37 @@
 // Declaration
 class RecursiveTree {
-    constructor(angleDelta, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, isBeautyMode, canvasContext) {
-        this.angleDelta = angleDelta;
+    constructor(lineLengthChangeFactor, angleChangeFactor, delay, divisions, isBeautyMode, canvasContext) {
         this.canvasContext = canvasContext;
         this.lineLengthChangeFactor = lineLengthChangeFactor;
-        this.leftBranchDelay = leftBranchDelay;
-        this.rightBranchDelay = rightBranchDelay;
+        this.angleChangeFactor = angleChangeFactor;
+        this.delay = delay;
         this.isBeautyMode = isBeautyMode;
+        this.divisions = divisions;
     }
 
-    draw(iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
+    draw(angleDelta, iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
         if (iterationCount > 0) {
-            let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
-
             if(this.isBeautyMode) {
                 canvasContext.lineWidth = iterationCount !== 1 ? iterationCount * 2 : 10;
                 canvasContext.strokeStyle = iterationCount !== 1 ? '#614126' : '#2d800f';
             }
+
+            let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
 
             this.canvasContext.beginPath();
             this.canvasContext.moveTo(currentXPosition, currentYPosition);
             this.canvasContext.lineTo(nextXPosition, nextYPosition);
             this.canvasContext.stroke();
 
-            // this is a workaround to get data into the scope of the setTimeout function
+            const angleToStart = angleDelta * (this.divisions - 1) / 2;
+
             const that = this;
 
-            setTimeout(function () {
-                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle + that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
-            }, this.leftBranchDelay);
-
-            setTimeout(function () {
-                that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle - that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
-            }, this.rightBranchDelay);
+            for(let i = 0; i < this.divisions; i++) {
+                setTimeout(function () {
+                    that.draw(angleDelta * that.angleChangeFactor,iterationCount - 1, nextXPosition, nextYPosition, (angle - angleToStart + angleDelta * i), lengthOfLines * that.lineLengthChangeFactor);
+                }, this.delay)
+            }
         }
     }
 
