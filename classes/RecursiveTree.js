@@ -1,16 +1,23 @@
 // Declaration
 class RecursiveTree {
-    constructor(angleDelta, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, canvasContext) {
+    constructor(angleDelta, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, isBeautyMode, canvasContext) {
         this.angleDelta = angleDelta;
         this.canvasContext = canvasContext;
         this.lineLengthChangeFactor = lineLengthChangeFactor;
         this.leftBranchDelay = leftBranchDelay;
         this.rightBranchDelay = rightBranchDelay;
+        this.isBeautyMode = isBeautyMode;
     }
 
     draw(iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
         if (iterationCount > 0) {
             let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
+
+            if(this.isBeautyMode) {
+                canvasContext.lineWidth = iterationCount !== 1 ? iterationCount * 2 : 10;
+                canvasContext.strokeStyle = iterationCount !== 1 ? '#614126' : '#2d800f';
+            }
+
             this.canvasContext.beginPath();
             this.canvasContext.moveTo(currentXPosition, currentYPosition);
             this.canvasContext.lineTo(nextXPosition, nextYPosition);

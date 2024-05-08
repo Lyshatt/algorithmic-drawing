@@ -12,6 +12,7 @@ const startAngleInput = document.getElementById('start-angle');
 const lineLengthChangeFactorInput = document.getElementById('line-length-change-factor');
 const leftBranchDelayInput = document.getElementById('left-branch-delay');
 const rightBranchDelayInput = document.getElementById('right-branch-delay');
+const beautyModeInput = document.getElementById('beauty-mode');
 
 const startButton = document.getElementById('start-button')
 
@@ -36,10 +37,11 @@ startButton.addEventListener("click", function () {
     const lineLengthChangeFactor = parseFloat(lineLengthChangeFactorInput.value);
     const leftBranchDelay = parseFloat(leftBranchDelayInput.value);
     const rightBranchDelay = parseFloat(rightBranchDelayInput.value);
+    const isBeautyMode = beautyModeInput.checked;
 
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(offsetAngle, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, canvasContext);
+    const tree = new RecursiveTree(offsetAngle, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, isBeautyMode, canvasContext);
     tree.draw(recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
