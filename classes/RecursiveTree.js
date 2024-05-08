@@ -6,13 +6,14 @@ class RecursiveTree {
         this.ctx = canvasContext;
     }
     draw(iterationCount, currentXPosition, currentYPosition, angle) {
-        const that = this;
         if(iterationCount > 0) {
             let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, this.lengthOfLines);
             this.ctx.beginPath();
             this.ctx.moveTo(currentXPosition, currentYPosition);
             this.ctx.lineTo(nextXPosition, nextYPosition);
             this.ctx.stroke();
+
+            const that = this;
 
             setTimeout(function ()  {
                 that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle + that.angleDelta);
