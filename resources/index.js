@@ -37,6 +37,7 @@ startButton.addEventListener("click", function () {
     const leftBranchDelay = parseFloat(leftBranchDelayInput.value);
     const rightBranchDelay = parseFloat(rightBranchDelayInput.value);
 
+    // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
     const tree = new RecursiveTree(offsetAngle, lineLengthChangeFactor, leftBranchDelay, rightBranchDelay, canvasContext);

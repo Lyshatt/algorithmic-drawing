@@ -7,8 +7,9 @@ class RecursiveTree {
         this.leftBranchDelay = leftBranchDelay;
         this.rightBranchDelay = rightBranchDelay;
     }
+
     draw(iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
-        if(iterationCount > 0) {
+        if (iterationCount > 0) {
             let [nextXPosition, nextYPosition] = this.calculateNextCoordinates(currentXPosition, currentYPosition, angle, lengthOfLines);
             this.canvasContext.beginPath();
             this.canvasContext.moveTo(currentXPosition, currentYPosition);
@@ -17,11 +18,11 @@ class RecursiveTree {
 
             const that = this;
 
-            setTimeout(function ()  {
+            setTimeout(function () {
                 that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle + that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
             }, this.leftBranchDelay);
 
-            setTimeout(function ()  {
+            setTimeout(function () {
                 that.draw(iterationCount - 1, nextXPosition, nextYPosition, angle - that.angleDelta, lengthOfLines * that.lineLengthChangeFactor);
             }, this.rightBranchDelay);
         }

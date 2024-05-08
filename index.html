@@ -7,108 +7,110 @@
     <script src="classes/RecursiveTree.js"></script>
 </head>
 <body>
-    <div class="flex p-5 bg-gray-200 h-dvh">
-        <div class="shadow-md bg-gray-100 p-2 flex flex-col">
-            <div class="flex-1 overflow-auto pr-2">
-                <div class="mb-2">
-                    <div>
-                        <label for="canvas-width">Canvas Width</label>
-                    </div>
-                    <div>
-                        <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="500" />
-                    </div>
+<div class="flex p-5 bg-gray-200 h-dvh">
+    <div class="shadow-md bg-gray-100 p-2 flex flex-col">
+        <div class="flex-1 overflow-auto pr-2">
+            <div class="mb-2">
+                <div>
+                    <label for="canvas-width">Canvas Width</label>
                 </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="canvas-height">Canvas Height</label>
-                    </div>
-                    <div>
-                        <input id="canvas-height" name="canvas-height" class="px-2 py-1 shadow-md" value="500" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="recursion-depth">Depth Of Recursion</label>
-                    </div>
-                    <div>
-                        <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="10" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="start-x">Start-Coordinate X</label>
-                    </div>
-                    <div>
-                        <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="250" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="start-y">Start-Coordinate Y</label>
-                    </div>
-                    <div>
-                        <input id="start-y" name="start-y" class="px-2 py-1 shadow-md" value="1" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="line-length">Line Length</label>
-                    </div>
-                    <div>
-                        <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="60" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="offset-angle">Offset Angle</label>
-                    </div>
-                    <div>
-                        <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="15" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="line-length-change-factor">Line Length Change Factor</label>
-                    </div>
-                    <div>
-                        <input id="line-length-change-factor" name="line-length-change-factor" class="px-2 py-1 shadow-md" value="0.9" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="start-angle">Start Angle</label>
-                    </div>
-                    <div>
-                        <input id="start-angle" name="start-angle" class="px-2 py-1 shadow-md" value="90" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="left-branch-delay">Left Branch Delay In MS</label>
-                    </div>
-                    <div>
-                        <input id="left-branch-delay" name="left-branch-delay" class="px-2 py-1 shadow-md" value="100" />
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div>
-                        <label for="right-branch-delay">Right Branch Delay in MS</label>
-                    </div>
-                    <div>
-                        <input id="right-branch-delay" name="right-branch-delay" class="px-2 py-1 shadow-md" value="200" />
-                    </div>
+                <div>
+                    <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="500"/>
                 </div>
             </div>
-
-            <div>
-                <button id="start-button" class="px-2 py-1 shadow-md rounded-sm bg-cyan-800 text-white w-full">Start</button>
+            <div class="mb-2">
+                <div>
+                    <label for="canvas-height">Canvas Height</label>
+                </div>
+                <div>
+                    <input id="canvas-height" name="canvas-height" class="px-2 py-1 shadow-md" value="500"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="recursion-depth">Depth Of Recursion</label>
+                </div>
+                <div>
+                    <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="10"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="start-x">Start-Coordinate X</label>
+                </div>
+                <div>
+                    <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="250"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="start-y">Start-Coordinate Y</label>
+                </div>
+                <div>
+                    <input id="start-y" name="start-y" class="px-2 py-1 shadow-md" value="1"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="line-length">Line Length</label>
+                </div>
+                <div>
+                    <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="60"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="offset-angle">Offset Angle</label>
+                </div>
+                <div>
+                    <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="15"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="line-length-change-factor">Line Length Change Factor</label>
+                </div>
+                <div>
+                    <input id="line-length-change-factor" name="line-length-change-factor" class="px-2 py-1 shadow-md"
+                           value="0.9"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="start-angle">Start Angle</label>
+                </div>
+                <div>
+                    <input id="start-angle" name="start-angle" class="px-2 py-1 shadow-md" value="90"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="left-branch-delay">Left Branch Delay In MS</label>
+                </div>
+                <div>
+                    <input id="left-branch-delay" name="left-branch-delay" class="px-2 py-1 shadow-md" value="100"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <label for="right-branch-delay">Right Branch Delay in MS</label>
+                </div>
+                <div>
+                    <input id="right-branch-delay" name="right-branch-delay" class="px-2 py-1 shadow-md" value="200"/>
+                </div>
             </div>
         </div>
-        <div class="flex flex-1 justify-center items-center bg-white shadow-md">
-            <canvas style="width: 500px; height: 500px;" class="m-2 border-4 bg-gray-200 rounded-sm border-gray-500" id="canvas" width="500" height="500"></canvas>
+        <div>
+            <button id="start-button" class="px-2 py-1 shadow-md rounded-sm bg-cyan-800 text-white w-full">Start
+            </button>
         </div>
     </div>
+    <div class="flex flex-1 justify-center items-center bg-white shadow-md">
+        <canvas style="width: 500px; height: 500px;" class="m-2 border-4 bg-gray-200 rounded-sm border-gray-500"
+                id="canvas" width="500" height="500"></canvas>
+    </div>
+</div>
 
-    <script src="resources/index.js"></script>
+<script src="resources/index.js"></script>
 </body>
 </html>
