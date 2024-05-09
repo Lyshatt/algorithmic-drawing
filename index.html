@@ -47,7 +47,7 @@
                     <label for="start-y">Start-Coordinate Y</label>
                 </div>
                 <div>
-                    <input id="start-y" name="start-y" class="px-2 py-1 shadow-md w-full" value="1"/>
+                    <input id="start-y" name="start-y" class="px-2 py-1 shadow-md w-full" value="0"/>
                 </div>
             </div>
             <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
@@ -81,7 +81,7 @@
                 </div>
                 <div>
                     <input id="angle-change-factor" name="angle-change-factor" class="px-2 py-1 shadow-md w-full"
-                           value="0.8"/>
+                           value="1.1"/>
                 </div>
             </div>
             <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
@@ -113,7 +113,7 @@
                     <label for="beauty-mode">Beauty Mode</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="beauty-mode" name="right-branch-delay" class="px-2 py-1 shadow-md"/>
+                    <input checked type="checkbox" id="beauty-mode" name="right-branch-delay" class="px-2 py-1 shadow-md"/>
                 </div>
             </div>
             <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
@@ -122,8 +122,10 @@
                 </div>
                 <div>
                     <select id="presets" name="presets" class="px-2 py-1 shadow-md w-full">
-                        <option disabled selected value>Select</option>
-                        <option value="0">
+                        <option selected value="0">
+                            Default
+                        </option>
+                        <option value="1">
                             Flower
                         </option>
                     </select>

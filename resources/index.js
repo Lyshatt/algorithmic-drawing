@@ -53,6 +53,22 @@ presetsSelect.addEventListener("change", function(event){
     if(event.target.value === '0') {
         widthInput.value = 600;
         heightInput.value = 500;
+        recursionDepthInput.value = 7;
+        xStartCoordinateInput.value = 300;
+        yStartCoordinateInput.value = 0;
+        lineLengthInput.value = 80;
+        offsetAngleInput.value = 25;
+        startAngleInput.value = 90;
+        lineLengthChangeFactorInput.value = 0.9;
+        angleChangeFactorInput.value = 1.1
+        delayInput.value = 0;
+        divisionsInput.value = 3;
+        beautyModeInput.checked = true;
+    }
+
+    if(event.target.value === '1') {
+        widthInput.value = 600;
+        heightInput.value = 500;
         recursionDepthInput.value = 6;
         xStartCoordinateInput.value = 300;
         yStartCoordinateInput.value = 190;
@@ -63,6 +79,6 @@ presetsSelect.addEventListener("change", function(event){
         angleChangeFactorInput.value = 1.7
         delayInput.value = 0;
         divisionsInput.value = 5;
-        beautyModeInput.value = false;
+        beautyModeInput.checked = false;
     }
 })
