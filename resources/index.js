@@ -50,7 +50,11 @@ startButton.addEventListener("click", function () {
 })
 
 presetsSelect.addEventListener("change", function(event){
+    alert('test1')
+
     if(event.target.value === '0') {
+        alert('test2')
+
         widthInput.value = 600;
         heightInput.value = 500;
         recursionDepthInput.value = 6;
