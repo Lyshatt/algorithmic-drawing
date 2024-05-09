@@ -570,6 +570,10 @@ video {
   height: 100dvh;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .min-h-dvh {
   min-height: 100dvh;
 }
@@ -584,6 +588,10 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .flex-1 {
@@ -682,6 +690,26 @@ video {
   line-height: 1.75rem;
 }
 
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -689,6 +717,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.accent-cyan-800 {
+  accent-color: #155e75;
 }
 
 .shadow-md {
@@ -750,8 +782,16 @@ video {
     height: 100dvh;
   }
 
+  .lg\:h-4 {
+    height: 1rem;
+  }
+
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-4 {
+    width: 1rem;
   }
 
   .lg\:flex-row {
@@ -782,6 +822,10 @@ video {
     overflow: auto;
   }
 
+  .lg\:p-0 {
+    padding: 0px;
+  }
+
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -794,5 +838,15 @@ video {
 
   .lg\:pr-2 {
     padding-right: 0.5rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
