@@ -7,10 +7,10 @@
     <script src="classes/RecursiveTree.js"></script>
 </head>
 <body>
-<div class="flex p-5 bg-gray-200 h-dvh">
-    <div class="shadow-md bg-gray-100 p-2 flex flex-col">
-        <div class="flex-1 overflow-auto pr-2">
-            <div class="mb-2">
+<div class="flex flex-col-reverse md:flex-row p-5 bg-gray-200 md:h-dvh">
+    <div class="shadow-md bg-gray-100 p-2 flex flex-col-reverse md:flex-col">
+        <div class="flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-1 md:overflow-auto pr-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="canvas-width">Canvas Width</label>
                 </div>
@@ -18,7 +18,7 @@
                     <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="600"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="canvas-height">Canvas Height</label>
                 </div>
@@ -26,7 +26,7 @@
                     <input id="canvas-height" name="canvas-height" class="px-2 py-1 shadow-md" value="500"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="recursion-depth">Depth Of Recursion</label>
                 </div>
@@ -34,7 +34,7 @@
                     <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="7"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="start-x">Start-Coordinate X</label>
                 </div>
@@ -42,7 +42,7 @@
                     <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="300"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="start-y">Start-Coordinate Y</label>
                 </div>
@@ -50,7 +50,7 @@
                     <input id="start-y" name="start-y" class="px-2 py-1 shadow-md" value="1"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="line-length">Line Length</label>
                 </div>
@@ -58,7 +58,7 @@
                     <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="80"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="offset-angle">Offset Angle</label>
                 </div>
@@ -66,7 +66,7 @@
                     <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="25"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="line-length-change-factor">Line Length Change Factor</label>
                 </div>
@@ -75,7 +75,7 @@
                            value="0.9"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="angle-change-factor">Angle Change Factor</label>
                 </div>
@@ -84,7 +84,7 @@
                            value="0.8"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="start-angle">Start Angle</label>
                 </div>
@@ -92,7 +92,7 @@
                     <input id="start-angle" name="start-angle" class="px-2 py-1 shadow-md" value="90"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="delay">Delay In MS</label>
                 </div>
@@ -100,15 +100,15 @@
                     <input id="delay" name="delay" class="px-2 py-1 shadow-md" value="100"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
-                    <label for="divisions">Numbers Of Branches Per Node</label>
+                    <label for="divisions">Branches Per Node</label>
                 </div>
                 <div>
                     <input id="divisions" name="divisions" class="px-2 py-1 shadow-md" value="3"/>
                 </div>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 md:w-full">
                 <div>
                     <label for="beauty-mode">Beauty Mode</label>
                 </div>
@@ -117,8 +117,8 @@
                 </div>
             </div>
         </div>
-        <div>
-            <button id="start-button" class="px-2 py-1 shadow-md rounded-sm bg-cyan-800 text-white w-full">Start
+        <div class="mb-2 md:mb-0 flex justify-center">
+            <button id="start-button" class="px-2 py-1 shadow-md rounded-sm bg-cyan-800 text-white w-1/2 md:w-full">Start
             </button>
         </div>
     </div>
