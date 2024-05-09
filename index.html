@@ -7,113 +7,126 @@
     <script src="classes/RecursiveTree.js"></script>
 </head>
 <body>
-<div class="flex flex-col-reverse lg:flex-row p-5 bg-gray-200 lg:h-dvh">
+<div class="flex flex-col-reverse lg:flex-row p-5 bg-gray-200 min-h-dvh lg:h-dvh">
     <div class="shadow-md bg-gray-100 p-2 flex flex-col-reverse lg:flex-col">
-        <div class="flex flex-row lg:flex-col flex-wrap lg:flex-nowrap flex-1 lg:overflow-auto pr-2">
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+        <div class="flex flex-row lg:flex-col flex-wrap lg:flex-nowrap lg:overflow-auto lg:pr-2">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="canvas-width">Canvas Width</label>
                 </div>
                 <div>
-                    <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md" value="600"/>
+                    <input id="canvas-width" name="canvas-width" class="px-2 py-1 shadow-md w-full" value="600"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="canvas-height">Canvas Height</label>
                 </div>
                 <div>
-                    <input id="canvas-height" name="canvas-height" class="px-2 py-1 shadow-md" value="500"/>
+                    <input id="canvas-height" name="canvas-height" class="px-2 py-1 shadow-md w-full" value="500"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="recursion-depth">Depth Of Recursion</label>
                 </div>
                 <div>
-                    <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md" value="7"/>
+                    <input id="recursion-depth" name="recursion-depth" class="px-2 py-1 shadow-md w-full" value="7"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="start-x">Start-Coordinate X</label>
                 </div>
                 <div>
-                    <input id="start-x" name="start-x" class="px-2 py-1 shadow-md" value="300"/>
+                    <input id="start-x" name="start-x" class="px-2 py-1 shadow-md w-full" value="300"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="start-y">Start-Coordinate Y</label>
                 </div>
                 <div>
-                    <input id="start-y" name="start-y" class="px-2 py-1 shadow-md" value="1"/>
+                    <input id="start-y" name="start-y" class="px-2 py-1 shadow-md w-full" value="1"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="line-length">Line Length</label>
                 </div>
                 <div>
-                    <input id="line-length" name="line-length" class="px-2 py-1 shadow-md" value="80"/>
+                    <input id="line-length" name="line-length" class="px-2 py-1 shadow-md w-full" value="80"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="offset-angle">Offset Angle</label>
                 </div>
                 <div>
-                    <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md" value="25"/>
+                    <input id="offset-angle" name="offset-angle" class="px-2 py-1 shadow-md w-full" value="25"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="line-length-change-factor">Line Length Change Factor</label>
                 </div>
                 <div>
-                    <input id="line-length-change-factor" name="line-length-change-factor" class="px-2 py-1 shadow-md"
+                    <input id="line-length-change-factor" name="line-length-change-factor" class="px-2 py-1 shadow-md w-full"
                            value="0.9"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="angle-change-factor">Angle Change Factor</label>
                 </div>
                 <div>
-                    <input id="angle-change-factor" name="angle-change-factor" class="px-2 py-1 shadow-md"
+                    <input id="angle-change-factor" name="angle-change-factor" class="px-2 py-1 shadow-md w-full"
                            value="0.8"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="start-angle">Start Angle</label>
                 </div>
                 <div>
-                    <input id="start-angle" name="start-angle" class="px-2 py-1 shadow-md" value="90"/>
+                    <input id="start-angle" name="start-angle" class="px-2 py-1 shadow-md w-full" value="90"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="delay">Delay In MS</label>
                 </div>
                 <div>
-                    <input id="delay" name="delay" class="px-2 py-1 shadow-md" value="100"/>
+                    <input id="delay" name="delay" class="px-2 py-1 shadow-md w-full" value="100"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="divisions">Branches Per Node</label>
                 </div>
                 <div>
-                    <input id="divisions" name="divisions" class="px-2 py-1 shadow-md" value="3"/>
+                    <input id="divisions" name="divisions" class="px-2 py-1 shadow-md w-full" value="3"/>
                 </div>
             </div>
-            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full">
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
                 <div>
                     <label for="beauty-mode">Beauty Mode</label>
                 </div>
                 <div>
                     <input type="checkbox" id="beauty-mode" name="right-branch-delay" class="px-2 py-1 shadow-md"/>
+                </div>
+            </div>
+            <div class="mb-2 w-1/2 sm:w-1/3 lg:w-full px-2 lg:px-0">
+                <div>
+                    <label for="presets" class="font-bold">Presets</label>
+                </div>
+                <div>
+                    <select id="presets" name="presets" class="px-2 py-1 shadow-md w-full">
+                        <option disabled selected value>Select</option>
+                        <option value="0">
+                            Flower
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>

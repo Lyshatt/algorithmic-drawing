@@ -570,6 +570,10 @@ video {
   height: 100dvh;
 }
 
+.min-h-dvh {
+  min-height: 100dvh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -608,6 +612,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .overflow-auto {
@@ -667,6 +675,15 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-white {
@@ -749,7 +766,33 @@ video {
     flex-wrap: nowrap;
   }
 
+  .lg\:gap-1 {
+    gap: 0.25rem;
+  }
+
+  .lg\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .lg\:gap-0 {
+    gap: 0px;
+  }
+
   .lg\:overflow-auto {
     overflow: auto;
+  }
+
+  .lg\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .lg\:pr-2 {
+    padding-right: 0.5rem;
   }
 }

@@ -16,6 +16,7 @@ const divisionsInput = document.getElementById('divisions');
 const beautyModeInput = document.getElementById('beauty-mode');
 
 const startButton = document.getElementById('start-button')
+const presetsSelect = document.getElementById('presets');
 
 widthInput.addEventListener('input', function () {
     canvas.width = widthInput.value;
@@ -46,4 +47,22 @@ startButton.addEventListener("click", function () {
 
     const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, isBeautyMode, canvasContext);
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
+})
+
+presetsSelect.addEventListener("change", function(event){
+    if(event.target.value === '0') {
+        widthInput.value = 600;
+        heightInput.value = 500;
+        recursionDepthInput.value = 6;
+        xStartCoordinateInput.value = 300;
+        yStartCoordinateInput.value = 190;
+        lineLengthInput.value = 50;
+        offsetAngleInput.value = 72;
+        startAngleInput.value = 90;
+        lineLengthChangeFactorInput.value = 1;
+        angleChangeFactorInput.value = 1.7
+        delayInput.value = 0;
+        divisionsInput.value = 5;
+        beautyModeInput.value = false;
+    }
 })
