@@ -18,12 +18,12 @@ const beautyModeInput = document.getElementById('beauty-mode');
 const startButton = document.getElementById('start-button')
 const presetsSelect = document.getElementById('presets');
 
-widthInput.addEventListener('input', function () {
+widthInput.addEventListener('change', function () {
     canvas.width = widthInput.value;
     canvas.style.width = widthInput.value + 'px';
 })
 
-heightInput.addEventListener("input", function () {
+heightInput.addEventListener("change", function () {
     canvas.height = heightInput.value
     canvas.style.height = heightInput.value + 'px';
 })
@@ -49,8 +49,8 @@ startButton.addEventListener("click", function () {
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
 
-presetsSelect.addEventListener("change", function(event){
-    if(event.target.value === '0') {
+presetsSelect.addEventListener("change", function(event) {
+    if (event.target.value === '0') {
         widthInput.value = 600;
         heightInput.value = 500;
         recursionDepthInput.value = 7;
@@ -60,13 +60,11 @@ presetsSelect.addEventListener("change", function(event){
         offsetAngleInput.value = 25;
         startAngleInput.value = 90;
         lineLengthChangeFactorInput.value = 0.9;
-        angleChangeFactorInput.value = 1.1
+        angleChangeFactorInput.value = 1.1;
         delayInput.value = 0;
         divisionsInput.value = 3;
         beautyModeInput.checked = true;
-    }
-
-    if(event.target.value === '1') {
+    } else if (event.target.value === '1') {
         widthInput.value = 600;
         heightInput.value = 500;
         recursionDepthInput.value = 6;
@@ -76,9 +74,55 @@ presetsSelect.addEventListener("change", function(event){
         offsetAngleInput.value = 72;
         startAngleInput.value = 90;
         lineLengthChangeFactorInput.value = 1;
-        angleChangeFactorInput.value = 1.7
+        angleChangeFactorInput.value = 1.7;
         delayInput.value = 0;
         divisionsInput.value = 5;
         beautyModeInput.checked = false;
+    } else if (event.target.value === '2') {
+        widthInput.value = 600;
+        heightInput.value = 500;
+        recursionDepthInput.value = 4;
+        xStartCoordinateInput.value = 300;
+        yStartCoordinateInput.value = 210;
+        lineLengthInput.value = 40;
+        offsetAngleInput.value = 36;
+        startAngleInput.value = 90;
+        lineLengthChangeFactorInput.value = 1.8;
+        angleChangeFactorInput.value = 0.4
+        delayInput.value = 0;
+        divisionsInput.value = 10;
+        beautyModeInput.checked = false;
+    } else if (event.target.value === '3') {
+        widthInput.value = 400;
+        heightInput.value = 400;
+        recursionDepthInput.value = 11;
+        xStartCoordinateInput.value = 200;
+        yStartCoordinateInput.value = 150;
+        lineLengthInput.value = 50;
+        offsetAngleInput.value = 180;
+        startAngleInput.value = 90;
+        lineLengthChangeFactorInput.value = 1;
+        angleChangeFactorInput.value = 1;
+        delayInput.value = 0;
+        divisionsInput.value = 2;
+        beautyModeInput.checked = false;
+    } else if (event.target.value === '4') {
+        widthInput.value = 600;
+        heightInput.value = 500;
+        recursionDepthInput.value = 11;
+        xStartCoordinateInput.value = 300;
+        yStartCoordinateInput.value = 200;
+        lineLengthInput.value = 50;
+        offsetAngleInput.value = 120;
+        startAngleInput.value = 90;
+        lineLengthChangeFactorInput.value = 1;
+        angleChangeFactorInput.value = 1;
+        delayInput.value = 0;
+        divisionsInput.value = 2;
+        beautyModeInput.checked = false;
     }
+
+    const changeEvent = new Event('change');
+    widthInput.dispatchEvent(changeEvent);
+    heightInput.dispatchEvent(changeEvent);
 })
