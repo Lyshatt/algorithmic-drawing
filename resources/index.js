@@ -13,10 +13,11 @@ const lineLengthChangeFactorInput = document.getElementById('line-length-change-
 const angleChangeFactorInput = document.getElementById('angle-change-factor');
 const delayInput = document.getElementById('delay');
 const divisionsInput = document.getElementById('divisions');
-const beautyModeInput = document.getElementById('beauty-mode');
+
+const colorModeSelect = document.getElementById('color-mode');
+const presetsSelect = document.getElementById('presets');
 
 const startButton = document.getElementById('start-button')
-const presetsSelect = document.getElementById('presets');
 
 widthInput.addEventListener('change', function () {
     canvas.width = widthInput.value;
@@ -40,14 +41,28 @@ startButton.addEventListener("click", function () {
     const angleChangeFactor = parseFloat(angleChangeFactorInput.value);
     const delay = parseInt(delayInput.value);
     const divisions = parseInt(divisionsInput.value);
-    const isBeautyMode = beautyModeInput.checked;
+    const colorMode = colorModeSelect.value;
 
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, isBeautyMode, canvasContext);
+    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#1BFFFF', '#2E3192');
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
+
+colorModeSelect.addEventListener("change", function(event) {
+    if (event.target.value === '2') {
+        canvas.classList.remove('bg-gray-200');
+        canvas.classList.remove('border-gray-500');
+        canvas.classList.add('border-black');
+        canvas.classList.add('bg-gray-900');
+    } else {
+        canvas.classList.add('bg-gray-200');
+        canvas.classList.add('border-gray-500');
+        canvas.classList.remove('border-black');
+        canvas.classList.remove('bg-gray-900');
+    }
+});
 
 presetsSelect.addEventListener("change", function(event) {
     if (event.target.value === '0') {
@@ -63,7 +78,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1.1;
         delayInput.value = 0;
         divisionsInput.value = 3;
-        beautyModeInput.checked = true;
+        colorModeSelect.value = '1';
     } else if (event.target.value === '1') {
         widthInput.value = 600;
         heightInput.value = 500;
@@ -77,7 +92,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1.7;
         delayInput.value = 0;
         divisionsInput.value = 5;
-        beautyModeInput.checked = false;
+        colorModeSelect.value = '2';
     } else if (event.target.value === '2') {
         widthInput.value = 600;
         heightInput.value = 500;
@@ -91,7 +106,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 0.4
         delayInput.value = 0;
         divisionsInput.value = 10;
-        beautyModeInput.checked = false;
+        colorModeSelect.value = '0';
     } else if (event.target.value === '3') {
         widthInput.value = 400;
         heightInput.value = 400;
@@ -105,7 +120,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1;
         delayInput.value = 0;
         divisionsInput.value = 2;
-        beautyModeInput.checked = false;
+        colorModeSelect.value = '0';
     } else if (event.target.value === '4') {
         widthInput.value = 600;
         heightInput.value = 500;
@@ -119,10 +134,11 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1;
         delayInput.value = 0;
         divisionsInput.value = 2;
-        beautyModeInput.checked = false;
+        colorModeSelect.value = '0';
     }
 
     const changeEvent = new Event('change');
     widthInput.dispatchEvent(changeEvent);
     heightInput.dispatchEvent(changeEvent);
-})
+    colorModeSelect.dispatchEvent(changeEvent);
+});
