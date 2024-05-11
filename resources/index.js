@@ -46,7 +46,7 @@ startButton.addEventListener("click", function () {
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#1BFFFF', '#ff1f1f');
+    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#00ffff', '#ff1f1f');
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
 
