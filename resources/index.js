@@ -34,9 +34,9 @@ startButton.addEventListener("click", function () {
     const recursionDepth = parseInt(recursionDepthInput.value);
     const xStartCoordinate = parseInt(xStartCoordinateInput.value);
     const yStartCoordinate = parseInt(yStartCoordinateInput.value);
-    const lineLength = parseInt(lineLengthInput.value);
-    const offsetAngle = parseInt(offsetAngleInput.value);
-    const startAngle = parseInt(startAngleInput.value);
+    const lineLength = parseFloat(lineLengthInput.value);
+    const offsetAngle = parseFloat(offsetAngleInput.value);
+    const startAngle = parseFloat(startAngleInput.value);
     const lineLengthChangeFactor = parseFloat(lineLengthChangeFactorInput.value);
     const angleChangeFactor = parseFloat(angleChangeFactorInput.value);
     const delay = parseInt(delayInput.value);
