@@ -46,7 +46,7 @@ startButton.addEventListener("click", function () {
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#1BFFFF', '#2E3192');
+    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#1BFFFF', '#ff1f1f');
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
 })
 
@@ -78,7 +78,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1.1;
         delayInput.value = 0;
         divisionsInput.value = 3;
-        colorModeSelect.value = '1';
+        colorModeSelect.value = '0';
     } else if (event.target.value === '1') {
         widthInput.value = 600;
         heightInput.value = 500;
@@ -134,7 +134,7 @@ presetsSelect.addEventListener("change", function(event) {
         angleChangeFactorInput.value = 1;
         delayInput.value = 0;
         divisionsInput.value = 2;
-        colorModeSelect.value = '0';
+        colorModeSelect.value = '2';
     }
 
     const changeEvent = new Event('change');
