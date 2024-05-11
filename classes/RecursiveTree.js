@@ -21,7 +21,7 @@ class RecursiveTree {
                 color = iterationCount !== 1 ? '#614126' : '#2d800f';
             } else if (this.colorMode === '2') {
                 canvasContext.lineWidth = 1;
-                color = this.calculateNextColor(this.startColor, this.endColor, 1 - iterationCount / this.maxRecursionDepth);
+                color = this.calculateNextColor(this.startColor, this.endColor, 1 - (iterationCount - 1) / this.maxRecursionDepth);
             } else {
                 canvasContext.lineWidth = 1;
                 color = '#000000';
