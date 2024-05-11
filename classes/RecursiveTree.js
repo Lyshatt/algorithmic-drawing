@@ -69,21 +69,21 @@ class RecursiveTree {
         endColor = endColor.replace('#', '');
 
         // Convert the start and end colors to RGB
-        var startR = parseInt(startColor.substring(0, 2), 16);
-        var startG = parseInt(startColor.substring(2, 4), 16);
-        var startB = parseInt(startColor.substring(4, 6), 16);
+        const startR = parseInt(startColor.substring(0, 2), 16);
+        const startG = parseInt(startColor.substring(2, 4), 16);
+        const startB = parseInt(startColor.substring(4, 6), 16);
 
-        var endR = parseInt(endColor.substring(0, 2), 16);
-        var endG = parseInt(endColor.substring(2, 4), 16);
-        var endB = parseInt(endColor.substring(4, 6), 16);
+        const endR = parseInt(endColor.substring(0, 2), 16);
+        const endG = parseInt(endColor.substring(2, 4), 16);
+        const endB = parseInt(endColor.substring(4, 6), 16);
 
         // Calculate the intermediate color
-        var r = Math.min(255, Math.round(startR + (endR - startR) * multiplier));
-        var g = Math.min(255, Math.round(startG + (endG - startG) * multiplier));
-        var b = Math.min(255, Math.round(startB + (endB - startB) * multiplier));
+        const r = Math.min(255, Math.round(startR + (endR - startR) * multiplier));
+        const g = Math.min(255, Math.round(startG + (endG - startG) * multiplier));
+        const b = Math.min(255, Math.round(startB + (endB - startB) * multiplier));
 
         // Convert the intermediate RGB back to hexadecimal
-        var hex = '#' + (r < 16 ? '0' : '') + r.toString(16) +
+        const hex = '#' + (r < 16 ? '0' : '') + r.toString(16) +
             (g < 16 ? '0' : '') + g.toString(16) +
             (b < 16 ? '0' : '') + b.toString(16);
 
