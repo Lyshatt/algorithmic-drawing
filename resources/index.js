@@ -35,6 +35,11 @@ heightInput.addEventListener("change", function () {
 startButton.addEventListener("click", function () {
     startButton.classList.add('hidden');
     stopButton.classList.remove('hidden');
+
+    // just to be sure stop old tree execution if it runs
+    if(tree) {
+        tree.setForceStop(true);
+    }
     
     const height = parseInt(heightInput.value);
     const recursionDepth = parseInt(recursionDepthInput.value);
