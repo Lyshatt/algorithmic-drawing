@@ -53,6 +53,8 @@ class RecursiveTree {
                     that.draw(angleDelta * that.angleChangeFactor,iterationCount - 1, nextXPosition, nextYPosition, (angle - angleToStart + angleDelta * i), lengthOfLines * that.lineLengthChangeFactor, color);
                 }, this.delay)
             }
+        } else if(this.forceStop) {
+            this.callback();
         } else {
             this.drawnLeaves++;
             
