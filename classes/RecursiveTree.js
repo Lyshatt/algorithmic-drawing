@@ -1,6 +1,6 @@
 // Declaration
 class RecursiveTree {
-    constructor(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, maxRecursionDepth, startColor, endColor) {
+    constructor(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, maxRecursionDepth, startColor, endColor, callback) {
         this.canvasContext = canvasContext;
         this.lineLengthChangeFactor = lineLengthChangeFactor;
         this.angleChangeFactor = angleChangeFactor;
@@ -10,10 +10,18 @@ class RecursiveTree {
         this.maxRecursionDepth = maxRecursionDepth;
         this.startColor = startColor;
         this.endColor = endColor;
+        this.forceStop = false;
+        this.numberOfLeaves = divisions^maxRecursionDepth;
+        this.drawnLeaves = 0;
+        this.callback = callback;
+    }
+
+    setForceStop(forceStop) {
+        this.forceStop = forceStop;
     }
 
     draw(angleDelta, iterationCount, currentXPosition, currentYPosition, angle, lengthOfLines) {
-        if (iterationCount > 0) {
+        if (iterationCount > 0 && !this.forceStop) {
             let color;
 
             if(this.colorMode === '1') {
@@ -44,6 +52,12 @@ class RecursiveTree {
                 setTimeout(function () {
                     that.draw(angleDelta * that.angleChangeFactor,iterationCount - 1, nextXPosition, nextYPosition, (angle - angleToStart + angleDelta * i), lengthOfLines * that.lineLengthChangeFactor, color);
                 }, this.delay)
+            }
+        } else {
+            this.drawnLeaves++;
+            
+            if(this.drawnLeaves === this.numberOfLeaves) {
+                this.callback();
             }
         }
     }

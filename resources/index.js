@@ -17,7 +17,10 @@ const divisionsInput = document.getElementById('divisions');
 const colorModeSelect = document.getElementById('color-mode');
 const presetsSelect = document.getElementById('presets');
 
-const startButton = document.getElementById('start-button')
+const startButton = document.getElementById('start-button');
+const stopButton = document.getElementById('stop-button');
+
+let tree = null;
 
 widthInput.addEventListener('change', function () {
     canvas.width = widthInput.value;
@@ -30,6 +33,9 @@ heightInput.addEventListener("change", function () {
 })
 
 startButton.addEventListener("click", function () {
+    startButton.classList.add('hidden');
+    stopButton.classList.remove('hidden');
+    
     const height = parseInt(heightInput.value);
     const recursionDepth = parseInt(recursionDepthInput.value);
     const xStartCoordinate = parseInt(xStartCoordinateInput.value);
@@ -46,8 +52,18 @@ startButton.addEventListener("click", function () {
     // clear the canvas before drawing on it again
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-    const tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#00ffff', '#ff1f1f');
+    tree = new RecursiveTree(lineLengthChangeFactor, angleChangeFactor, delay, divisions, colorMode, canvasContext, recursionDepth, '#00ffff', '#ff1f1f', () => {
+        startButton.classList.remove('hidden');
+        stopButton.classList.add('hidden');
+    });
+    
     tree.draw(offsetAngle, recursionDepth, xStartCoordinate, height - yStartCoordinate, startAngle, lineLength);
+})
+
+stopButton.addEventListener("click", function () {
+    if(tree) {
+        tree.setForceStop(true);
+    }
 })
 
 colorModeSelect.addEventListener("change", function(event) {
