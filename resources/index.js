@@ -68,6 +68,8 @@ startButton.addEventListener("click", function () {
 stopButton.addEventListener("click", function () {
     if(tree) {
         tree.setForceStop(true);
+        startButton.classList.remove('hidden');
+        stopButton.classList.add('hidden');
     }
 })
 
